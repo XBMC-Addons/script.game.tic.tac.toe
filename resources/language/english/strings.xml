@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<strings>
+  <!-- GENERAL STRINGS: USED IN XML -->
+  <string id="0">Tic Tac Toe</string>
+  <string id="1">Player I</string>
+  <string id="2">Player II</string>
+  <string id="3">Change Adversary</string>
+  <string id="4">Reset Tiles</string>
+  <string id="5">Start New Game</string>
+  <string id="6">Exit</string>
+  <string id="7">View: Cabinet</string>
+  <string id="8">View: Upright</string>
+  <string id="9">Hard</string>
+
+  <string id="11"></string>
+  <string id="12"></string>
+
+  <!-- strings 32000 thru 32999 reserved for scripts -->
+  <!-- GENERAL STRINGS: USED IN PY -->
+  <string id="32100">Player I vs XBMC</string>
+  <string id="32101">Player I vs Player II</string>
+  <string id="32102">X to play</string>
+  <string id="32103">O to play</string>
+  <string id="32104">XBMC to play</string>
+  <string id="32105">Player I (X) Win</string>
+  <string id="32106">Player II (O) Win</string>
+  <string id="32107">XBMC (O) Win</string>
+  <string id="32108">Match Null</string>
+  <string id="32109"></string>
+  <string id="32110"></string>
+</strings>

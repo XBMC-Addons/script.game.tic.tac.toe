@@ -1,0 +1,814 @@
+<window>
+	<defaultcontrol>9001</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+
+	<coordinates>
+		<system>1</system>
+		<posx>114</posx>
+		<posy>32</posy>
+	</coordinates>
+
+	<controls>
+		<control type="group">
+			<animation effect="rotatex" center="360,50" start="0" end="45" time="1000" condition="Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+
+			<!-- BACKGROUND -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>512</width>
+				<height>512</height>
+				<texture border="20">TTT-DialogBack.png</texture>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>512</width>
+				<height>512</height>
+				<texture diffuse="TTT-fanart-diffuse.png" border="5">flame-head-bg.png</texture>
+				<info>Container(150).ListItem(0).Property(fanart_win)</info>
+				<bordersize>2</bordersize>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>512</width>
+				<height>512</height>
+				<texture border="20">TTT-DialogFront.png</texture>
+			</control>
+
+			<!-- BUTTON CLOSE DIALOG MOUSE ONLY -->
+			<control type="button" id="300">
+				<description>Close Window button</description>
+				<posx>453</posx>
+				<posy>34</posy>
+				<width>25</width>
+				<height>20</height>
+				<label>-</label>
+				<font>-</font>
+				<texturefocus>TTT-close-windowFO.png</texturefocus>
+				<texturenofocus>TTT-close-window.png</texturenofocus>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<visible>system.getbool(lookandfeel.enablemouse)</visible>
+			</control>
+
+			<!-- LABELS HEADING -->
+			<control type="label">
+				<description>Title value</description>
+				<posx>30</posx>
+				<posy>45</posy>
+				<width>450</width>
+				<height>30</height>
+				<font>font13</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>99ffffff</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<label>[B][I]$LOCALIZE[SCRIPT0][/I][/B]</label>
+				<animation effect="zoom" center="auto" end="160" time="0" condition="true">Conditional</animation>
+				<animation effect="rotatex" center="60,0" start="0" end="-45" time="400" reversible="true" condition="Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+			</control>
+			<control type="image">
+				<posx>30</posx>
+				<posy>85</posy>
+				<width>450</width>
+				<height>3</height>
+				<texture>TTT-separator.png</texture>
+			</control>
+
+			<!-- IMAGE GRID -->
+			<control type="group">
+				<posx>99</posx>
+				<posy>95</posy>
+				<control type="image">
+					<description>L1R1 tile back image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L2R1 tile back image</description>
+					<posx>0</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L3R1 tile back image</description>
+					<posx>0</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L1R2 tile back image</description>
+					<posx>105</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L2R2 tile back image</description>
+					<posx>105</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L3R2 tile back image</description>
+					<posx>105</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L1R3 tile back image</description>
+					<posx>210</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L2R3 tile back image</description>
+					<posx>210</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+				<control type="image">
+					<description>L3R3 tile back image</description>
+					<posx>210</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10">TTT-back-tile.png</texture>
+				</control>
+			</control>
+
+			<!-- IMAGE PLAYER SELECTIONS -->
+			<control type="group">
+				<posx>99</posx>
+				<posy>95</posy>
+				<control type="image">
+					<description>L1R1 player O or X image</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L1R1)</info>
+					<animation effect="rotatey" center="50,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L1R1))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L2R1 player O or X image</description>
+					<posx>0</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L2R1)</info>
+					<animation effect="rotatey" center="50,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L2R1))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L3R1 player O or X image</description>
+					<posx>0</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L3R1)</info>
+					<animation effect="rotatey" center="50,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L3R1))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L1R2 player O or X image</description>
+					<posx>105</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L1R2)</info>
+					<animation effect="rotatey" center="155,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L1R2))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L2R2 player O or X image</description>
+					<posx>105</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L2R2)</info>
+					<animation effect="rotatey" center="155,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L2R2))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L3R2 player O or X image</description>
+					<posx>105</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L3R2)</info>
+					<animation effect="rotatey" center="155,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L3R2))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L1R3 player O or X image</description>
+					<posx>210</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L1R3)</info>
+					<animation effect="rotatey" center="260,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L1R3))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L2R3 player O or X image</description>
+					<posx>210</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L2R3)</info>
+					<animation effect="rotatey" center="260,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L2R3))">Conditional</animation>
+				</control>
+				<control type="image">
+					<description>L3R3 player O or X image</description>
+					<posx>210</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<texture border="10" />
+					<bordersize>5</bordersize>
+					<info>Container(150).ListItem(0).Property(L3R3)</info>
+					<animation effect="rotatey" center="260,0" start="180" end="0" time="1000" reversible="true" condition="!IsEmpty(Container(150).ListItem(0).Property(L3R3))">Conditional</animation>
+				</control>
+			</control>
+
+			<!-- BUTTONS PLAYER SELECTIONS -->
+			<control type="group" id="9000">
+				<posx>99</posx>
+				<posy>95</posy>
+				<control type="togglebutton" id="11">
+					<description>L1R1 Button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>33</onleft>
+					<onright>12</onright>
+					<onup>33</onup>
+					<ondown>21</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L1R1))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L1R1))</visible>
+				</control>
+				<control type="togglebutton" id="21">
+					<description>L2R1 Button</description>
+					<posx>0</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>13</onleft>
+					<onright>22</onright>
+					<onup>11</onup>
+					<ondown>31</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L2R1))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L2R1))</visible>
+				</control>
+				<control type="togglebutton" id="31">
+					<description>L3R1 Button</description>
+					<posx>0</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>23</onleft>
+					<onright>32</onright>
+					<onup>21</onup>
+					<ondown>310</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L3R1))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L3R1))</visible>
+				</control>
+				<control type="togglebutton" id="12">
+					<description>L1R2 Button</description>
+					<posx>105</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>11</onleft>
+					<onright>13</onright>
+					<onup>31</onup>
+					<ondown>22</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L1R2))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L1R2))</visible>
+				</control>
+				<control type="togglebutton" id="22">
+					<description>L2R2 Button</description>
+					<posx>105</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>21</onleft>
+					<onright>23</onright>
+					<onup>12</onup>
+					<ondown>32</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L2R2))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L2R2))</visible>
+				</control>
+				<control type="togglebutton" id="32">
+					<description>L3R2 Button</description>
+					<posx>105</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>31</onleft>
+					<onright>33</onright>
+					<onup>22</onup>
+					<ondown>321</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L3R2))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L3R2))</visible>
+				</control>
+				<control type="togglebutton" id="13">
+					<description>L1R3 Button</description>
+					<posx>210</posx>
+					<posy>0</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>12</onleft>
+					<onright>21</onright>
+					<onup>32</onup>
+					<ondown>23</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L1R3))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L1R3))</visible>
+				</control>
+				<control type="togglebutton" id="23">
+					<description>L2R3 Button</description>
+					<posx>210</posx>
+					<posy>105</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>22</onleft>
+					<onright>31</onright>
+					<onup>13</onup>
+					<ondown>33</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L2R3))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L2R3))</visible>
+				</control>
+				<control type="togglebutton" id="33">
+					<description>L3R3 Button</description>
+					<posx>210</posx>
+					<posy>210</posy>
+					<width>100</width>
+					<height>100</height>
+					<label>-</label>
+					<font>-</font>
+					<texturenofocus border="10">-</texturenofocus>
+					<texturefocus border="10">player_one.png</texturefocus>
+					<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+					<alttexturefocus border="10">player_two.png</alttexturefocus>
+					<alttexturenofocus border="10">-</alttexturenofocus>
+					<onleft>32</onleft>
+					<onright>11</onright>
+					<onup>23</onup>
+					<ondown>330</ondown>
+					<enable>IsEmpty(Container(150).ListItem(0).Property(L3R3))</enable>
+					<visible>IsEmpty(Container(150).ListItem(0).Property(L3R3))</visible>
+				</control>
+			</control>
+
+			<!-- IMAGE LINE WIN -->
+			<control type="group">
+				<description>lines win image</description>
+				<visible>!IsEmpty(Container(150).ListItem(0).Property(haswinner))</visible>
+				<posx>99</posx>
+				<posy>95</posy>
+				<control type="image">
+					<description>line win 1 to 3 and 8 image</description>
+					<posx>0</posx>
+					<posy>105</posy> <!-- default line 2 win -->
+					<width>310</width>
+					<height>100</height>
+					<texture>line-123.png</texture>
+					<visible>!IsEmpty(Container(150).ListItem(0).Property(Line1win)) | !IsEmpty(Container(150).ListItem(0).Property(Line2win)) | !IsEmpty(Container(150).ListItem(0).Property(Line3win)) | !IsEmpty(Container(150).ListItem(0).Property(Line8win))</visible>
+					<animation effect="slide" end="0,-105" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line1win))">Conditional</animation> <!-- line 1 win -->
+					<animation effect="slide" end="0,105" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line3win))">Conditional</animation> <!-- line 3 win -->
+					<animation effect="rotate" center="auto" start="0" end="45" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line8win))">Conditional</animation> <!-- line 8 win diagonal bottom to top -->
+				</control>
+				<control type="image">
+					<description>line win 4 to 6 and 7 image</description>
+					<posx>105</posx> <!-- default line 5 win -->
+					<posy>0</posy>
+					<width>100</width>
+					<height>310</height>
+					<texture>line-456.png</texture>
+					<visible>!IsEmpty(Container(150).ListItem(0).Property(Line4win)) | !IsEmpty(Container(150).ListItem(0).Property(Line5win)) | !IsEmpty(Container(150).ListItem(0).Property(Line6win)) | !IsEmpty(Container(150).ListItem(0).Property(Line7win))</visible>
+					<animation effect="slide" end="-105,0" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line4win))">Conditional</animation> <!-- line 4 win -->
+					<animation effect="slide" end="105,0" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line6win))">Conditional</animation> <!-- line 6 win -->
+					<animation effect="rotate" center="auto" start="0" end="45" time="0" condition="!IsEmpty(Container(150).ListItem(0).Property(Line7win))">Conditional</animation> <!-- line 7 win diagonal top to bottom -->
+				</control>
+			</control>
+
+			<!-- CONTAINER USED FOR PROPERTY ONLY -->
+			<control type="list" id="150">
+				<description>container</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>10</width>
+				<height>10</height>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="10" />
+				<focusedlayout height="10" />
+			</control>
+
+			<!-- LABELS SCORE VALUE -->
+			<control type="togglebutton">
+				<description>player one score value</description>
+				<posx>33</posx>
+				<posy>346</posy>
+				<width>64</width>
+				<height>64</height>
+				<label>$INFO[Container(150).ListItem(0).Property(score_player_one)][CR]$LOCALIZE[SCRIPT1]</label>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>99ffffff</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<textoffsety>38</textoffsety>
+				<pulseonselect>no</pulseonselect>
+				<texturenofocus>player_one.png</texturenofocus>
+				<texturefocus>player_one.png</texturefocus>
+				<usealttexture>!IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+				<alttexturefocus>player_one_noplay.png</alttexturefocus>
+				<alttexturenofocus>player_one_noplay.png</alttexturenofocus>
+			</control>
+			<control type="togglebutton">
+				<description>player two score value</description>
+				<posx>411</posx>
+				<posy>346</posy>
+				<width>64</width>
+				<height>64</height>
+				<label>$INFO[Container(150).ListItem(0).Property(score_player_two)][CR]$LOCALIZE[SCRIPT2]</label>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>top</aligny>
+				<textcolor>99ffffff</textcolor>
+				<shadowcolor>FF000000</shadowcolor>
+				<textoffsety>38</textoffsety>
+				<pulseonselect>no</pulseonselect>
+				<texturenofocus>player_two.png</texturenofocus>
+				<texturefocus>player_two.png</texturefocus>
+				<usealttexture>IsEmpty(Container(150).ListItem(0).Property(playerIItoplay))</usealttexture>
+				<alttexturefocus>player_two_noplay.png</alttexturefocus>
+				<alttexturenofocus>player_two_noplay.png</alttexturenofocus>
+			</control>
+
+			<!-- GROUP OPTIONS BUTTONS -->
+			<control type="group" id="9001">
+				<posx>74</posx>
+				<posy>403</posy>
+				<control type="image">
+					<posx>-245</posx>
+					<posy>84</posy>
+					<width>805</width>
+					<height>46</height>
+					<texture>TTT-sub-background-label.png</texture>
+				</control>
+				<control type="label">
+					<description>information during the game</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>$INFO[Container(150).ListItem(0).Property(toplay)]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(350) | !ControlGroup(9001).HasFocus</visible>
+				</control>
+
+				<control type="button" id="310">
+					<description>choice player vs player or player vs XBMC</description>
+					<posx>60</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texturefocus>change-adversary-focus.gif</texturefocus>
+					<texturenofocus>change-adversary-nofocus.png</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<onleft>350</onleft>
+					<onright>320</onright>
+					<onup>9000</onup>
+					<ondown>12</ondown>
+					<font>-</font>
+					<label>-</label>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT3</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(310)</visible>
+				</control>
+				<control type="button" id="321">
+					<description>start new game button</description>
+					<posx>120</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>TTT-reset-nofocus.png</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<onleft>310</onleft>
+					<onright>330</onright>
+					<onup>9000</onup>
+					<ondown>320</ondown>
+					<font>-</font>
+					<label>-</label>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="button" id="320">
+					<description>Reboot button</description>
+					<posx>120</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>TTT-reset-nofocus.png</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<onleft>310</onleft>
+					<onright>330</onright>
+					<onup>321</onup>
+					<ondown>13</ondown>
+					<font>-</font>
+					<label>-</label>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="image">
+					<posx>120</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texture>TTT-reset-focus.gif</texture>
+					<visible>Control.HasFocus(320) | Control.HasFocus(321)</visible>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="togglebutton" id="322">
+					<description>arrow's updown Button</description>
+					<posx>142</posx>
+					<posy>58</posy>
+					<width>16</width>
+					<height>10</height>
+					<label>-</label>
+					<font>-</font>
+					<pulseonselect>no</pulseonselect>
+					<texturenofocus>TTT-scroll-down-focus.gif</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<usealttexture>Control.HasFocus(320)</usealttexture>
+					<alttexturefocus>-</alttexturefocus>
+					<alttexturenofocus>TTT-scroll-up-focus.gif</alttexturenofocus>
+					<onfocus>SetFocus(320)</onfocus>
+					<onleft>320</onleft>
+					<onright>320</onright>
+					<onup>320</onup>
+					<ondown>320</ondown>
+					<visible>Control.HasFocus(320) | Control.HasFocus(321)</visible>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT5</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(321)</visible>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT4</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(320) | Control.HasFocus(322)</visible>
+				</control>
+				<control type="button" id="330">
+					<description>close script button</description>
+					<posx>180</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texturefocus>TTT-exit-focus.gif</texturefocus>
+					<texturenofocus>TTT-exit-nofocus.png</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<onleft>320</onleft>
+					<onright>340</onright>
+					<onup>9000</onup>
+					<ondown>11</ondown>
+					<font>-</font>
+					<label>-</label>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT6</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(330)</visible>
+				</control>
+				<control type="button" id="340">
+					<description>upright or cabinet button</description>
+					<posx>240</posx>
+					<posy>5</posy>
+					<width>60</width>
+					<height>65</height>
+					<texturefocus>upright-cabinet-focus.gif</texturefocus>
+					<texturenofocus>upright-cabinet-nofocus.png</texturenofocus>
+					<pulseonselect>no</pulseonselect>
+					<onleft>330</onleft>
+					<onright>350</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+					<font>-</font>
+					<label>-</label>
+					<onclick>Skin.ToggleSetting(TTT-cabinet_style)</onclick>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT7</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)</visible>
+				</control>
+				<control type="label">
+					<description>Label control</description>
+					<posx>19</posx>
+					<posy>91</posy>
+					<width>322</width>
+					<height>20</height>
+					<label>SCRIPT8</label>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<visible>Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)</visible>
+				</control>
+				<control type="image">
+					<posx>60</posx>
+					<posy>5</posy>
+					<width>240</width>
+					<height>65</height>
+					<texture border="5">TTT-menu_border.png</texture>
+					<animation effect="rotatex" center="65,0" start="0" end="-45" time="400" reversible="true" condition="Control.HasFocus(340) + Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+					<animation effect="rotatex" center="65,0" start="0" end="45" time="400" reversible="true" condition="Control.HasFocus(340) + !Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
+				</control>
+				<control type="radiobutton" id="350">
+					<description>hard or humain XBMC</description>
+					<posx>325</posx>
+					<posy>45</posy>
+					<width>85</width>
+					<height>30</height>
+					<!--<radioposx>36</radioposx>
+					<radioposy>30</radioposy>-->
+					<radiowidth>15</radiowidth>
+					<radioheight>15</radioheight>
+					<onclick>SetFocus(9000)</onclick>
+					<textureradiofocus>TTT-radiobutton-focus.png</textureradiofocus>
+					<textureradionofocus>TTT-radiobutton-nofocus.png</textureradionofocus>
+					<texturefocus>-</texturefocus>
+					<texturenofocus>-</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<font>font10</font>
+					<align>right</align>
+					<textoffsetx>25</textoffsetx>
+					<aligny>center</aligny>
+					<label>SCRIPT9</label>
+					<textcolor>99ffffff</textcolor>
+					<shadowcolor>FF000000</shadowcolor>
+					<focusedcolor>FFe2ff43</focusedcolor>
+					<onleft>340</onleft>
+					<onright>310</onright>
+					<onup>9000</onup>
+					<ondown>9000</ondown>
+				</control>
+			</control>
+		</control>
+
+	</controls>
+</window>
