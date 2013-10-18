@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
 <strings>
   <!-- GENERAL STRINGS: USED IN XML -->
-  <string id="0">Tic Tac Toe</string>
-  <string id="1">Player I</string>
-  <string id="2">Player II</string>
-  <string id="3">Change Adversary</string>
-  <string id="4">Reset Tiles</string>
-  <string id="5">Start New Game</string>
-  <string id="6">Exit</string>
-  <string id="7">View: Cabinet</string>
-  <string id="8">View: Upright</string>
-  <string id="9">Hard</string>
+  <string id="32000">Tic Tac Toe</string>
+  <string id="32001">Player I</string>
+  <string id="32002">Player II</string>
+  <string id="32003">Change Adversary</string>
+  <string id="32004">Reset Tiles</string>
+  <string id="32005">Start New Game</string>
+  <string id="32006">Exit</string>
+  <string id="32007">View: Cabinet</string>
+  <string id="32008">View: Upright</string>
+  <string id="32009">Hard</string>
 
-  <string id="11"></string>
-  <string id="12"></string>
+  <string id="32011"></string>
+  <string id="32012"></string>
 
   <!-- strings 32000 thru 32999 reserved for scripts -->
   <!-- GENERAL STRINGS: USED IN PY -->

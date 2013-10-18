@@ -68,7 +68,7 @@
 				<aligny>center</aligny>
 				<textcolor>99ffffff</textcolor>
 				<shadowcolor>FF000000</shadowcolor>
-				<label>[B][I]$LOCALIZE[SCRIPT0][/I][/B]</label>
+				<label>[B][I]$ADDON[script.game.tic.tac.toe 32000][/I][/B]</label>
 				<animation effect="zoom" center="auto" end="160" time="0" condition="true">Conditional</animation>
 				<animation effect="rotatex" center="60,0" start="0" end="-45" time="400" reversible="true" condition="Skin.HasSetting(TTT-cabinet_style)">Conditional</animation>
 			</control>
@@ -500,7 +500,7 @@
 				<posy>346</posy>
 				<width>64</width>
 				<height>64</height>
-				<label>$INFO[Container(150).ListItem(0).Property(score_player_one)][CR]$LOCALIZE[SCRIPT1]</label>
+				<label>$INFO[Container(150).ListItem(0).Property(score_player_one)][CR]$ADDON[script.game.tic.tac.toe 32001]</label>
 				<font>font12</font>
 				<align>center</align>
 				<aligny>top</aligny>
@@ -520,7 +520,7 @@
 				<posy>346</posy>
 				<width>64</width>
 				<height>64</height>
-				<label>$INFO[Container(150).ListItem(0).Property(score_player_two)][CR]$LOCALIZE[SCRIPT2]</label>
+				<label>$INFO[Container(150).ListItem(0).Property(score_player_two)][CR]$ADDON[script.game.tic.tac.toe 32002]</label>
 				<font>font12</font>
 				<align>center</align>
 				<aligny>top</aligny>
@@ -585,7 +585,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT3</label>
+					<label>$ADDON[script.game.tic.tac.toe 32003]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -668,7 +668,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT5</label>
+					<label>$ADDON[script.game.tic.tac.toe 32005]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -682,7 +682,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT4</label>
+					<label>$ADDON[script.game.tic.tac.toe 32004]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -714,7 +714,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT6</label>
+					<label>$ADDON[script.game.tic.tac.toe 32006]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -747,7 +747,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT7</label>
+					<label>$ADDON[script.game.tic.tac.toe 32007]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -761,7 +761,7 @@
 					<posy>91</posy>
 					<width>322</width>
 					<height>20</height>
-					<label>SCRIPT8</label>
+					<label>$ADDON[script.game.tic.tac.toe 32008]</label>
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font12</font>
@@ -798,7 +798,7 @@
 					<align>right</align>
 					<textoffsetx>25</textoffsetx>
 					<aligny>center</aligny>
-					<label>SCRIPT9</label>
+					<label>$ADDON[script.game.tic.tac.toe 32009]</label>
 					<textcolor>99ffffff</textcolor>
 					<shadowcolor>FF000000</shadowcolor>
 					<focusedcolor>FFe2ff43</focusedcolor>
